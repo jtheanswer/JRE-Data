@@ -1,6 +1,6 @@
 # coding = utf-8
 """Obtener los datos de la web de podcasts de Joe Rogan de forma estructurada."""
-__author__ = 'jgovind'
+__author__ = 'jtheanswer'
 from bs4 import BeautifulSoup
 import re
 import datetime

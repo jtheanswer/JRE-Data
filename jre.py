@@ -1,5 +1,5 @@
 # coding = utf-8
-__author__ = 'jgovind'
+__author__ = 'jtheanswer'
 import requests
 from bs4 import BeautifulSoup
 

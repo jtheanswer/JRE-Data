@@ -1,5 +1,5 @@
 # coding = utf-8
-__author__ = 'jgovind'
+__author__ = 'jtheanswer'
 import requests
 from bs4 import BeautifulSoup
 
@@ -9,6 +9,7 @@ class Browser:
 	
 	def __init__(self, url):
 		"""Inicializamos la clase"""
+		
 		self.url = url
 		self.html = ''
 		self.header = {'User-Agent' : 'Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.17 (KHTML, like Gecko) Chrome/24.0.1312.27 Safari/537.17'}
@@ -22,13 +23,16 @@ class Browser:
 			self.peticion = requests.get(self.url, headers = self.header)
 		
 		except requests.exceptions.ConnectionError as e:
-			print 'Error de conexion: ' + e
+			print 'Error de conexion:'
+			print e
 
 		except requests.exceptions.Timeout as e:
-			print 'Error de timeout: ' + e
+			print 'Error de timeout:'
+			print e
 
 		except requests.exceptions.InvalidURL as e:
-			print 'URL no valida: ' + e
+			print 'URL no valida:'
+			print e
 
 
 
@@ -43,7 +47,7 @@ class Browser:
 				self.html = BeautifulSoup(self.peticion.text, 'html.parser')
 
 			else:
-				print 'Status Code %d' % status_code
+				print 'Error de pagina web: Status Code %d' % status_code
 
 
 	def preparar_fichero(self):
