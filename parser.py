@@ -57,7 +57,9 @@ class Parser:
 
 		self.html_numero = self.html.find_all('span', {'class' : 'episode-num'})
 
-		return self.html_numero[num_podcast].getText()
+		numero = self.html_numero[num_podcast].getText()
+
+		return numero.replace('#', '')
 
 
 
