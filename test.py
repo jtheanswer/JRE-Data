@@ -13,8 +13,13 @@ jre.preparar_fichero()
 
 parseador = Parser(jre.html)
 
-parseador.obtener_twitter(num_podcast = 1)
+#parseador.obtener_twitter(num_podcast = 1)
 
-print parseador.twitters
+parseador.datos_podcast()
+
+print parseador.lista_podcasts
+
+for p in parseador.lista_podcasts:
+	print p.twitter
 
 #print jre.html
