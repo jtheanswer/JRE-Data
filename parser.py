@@ -71,8 +71,11 @@ class Parser:
 
 		# Quitamos el numero de episodio del principio del texto
 		descripcion = self.html_descripcion[num_podcast].getText()
-		numero = re.search('#[\d]+.[\s]*', descripcion).group()
-		descripcion = descripcion.replace(numero, '')
+		#numero = re.search('#[\d]+.[\s]*', descripcion).group()
+		numero = re.search('#[\d]+.[\s]*', descripcion)
+
+		if hasattr(numero, 'group'):
+			descripcion = descripcion.replace(numero.group(), '')
 
 		return descripcion
 
