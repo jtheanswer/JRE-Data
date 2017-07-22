@@ -20,6 +20,11 @@ parseador.datos_podcast()
 print parseador.lista_podcasts
 
 for p in parseador.lista_podcasts:
+	print p.invitado
+	print p.numero
 	print p.twitter
+	print p.fecha
+	print p.descripcion
+	print '*****************************************************'
 
 #print jre.html
