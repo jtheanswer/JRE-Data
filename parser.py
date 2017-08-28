@@ -1,7 +1,8 @@
 # coding = utf-8
 __author__ = 'jtheanswer'
 import re
-import datetime
+#import datetime
+from datetime import date
 
 from podcast import Podcast
 
@@ -94,9 +95,10 @@ class Parser:
 			if j == 1: # Dia
 			    dia = fecha[j]
 			if j == 2: # Anyo
-			    anyo = fecha[j]
+			    anyo = '20' + fecha[j]
 				
-		fecha_podcast = datetime.datetime.strptime(dia + "-" + mes + "-" + anyo, "%d-%m-%y")
+		#fecha_podcast = datetime.datetime.strptime(dia + "-" + mes + "-" + anyo, "%d-%m-%y")
+		fecha_podcast = date(int(anyo), int(mes), int(dia)).strftime("%d/%m/%y")
 		
 		return fecha_podcast
 
