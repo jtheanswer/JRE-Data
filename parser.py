@@ -1,8 +1,8 @@
 # coding = utf-8
 __author__ = 'jtheanswer'
 import re
-#import datetime
-from datetime import date
+import datetime
+#from datetime import date
 
 from podcast import Podcast
 
@@ -60,7 +60,7 @@ class Parser:
 
 		numero = self.html_numero[num_podcast].getText()
 
-		return numero.replace('#', '')
+		return int(numero.replace('#', ''))
 
 
 
@@ -98,7 +98,8 @@ class Parser:
 			    anyo = '20' + fecha[j]
 				
 		#fecha_podcast = datetime.datetime.strptime(dia + "-" + mes + "-" + anyo, "%d-%m-%y")
-		fecha_podcast = date(int(anyo), int(mes), int(dia)).strftime("%d/%m/%y")
+		fecha_podcast = datetime.datetime(int(anyo), int(mes), int(dia), 0, 0)
+		#fecha_podcast = date(int(anyo), int(mes), int(dia)).strftime("%d/%m/%y")
 		
 		return fecha_podcast
 
