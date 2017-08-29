@@ -71,7 +71,11 @@ class Parser:
 		if num_podcast < len(self.html_numero):
 
 			numero = self.html_numero[num_podcast].getText()
-			return int(numero.replace('#', ''))
+
+			try:
+				return int(numero.replace('#', ''))
+			except ValueError:
+				return numero.replace('#', '')
 
 		return None
 
