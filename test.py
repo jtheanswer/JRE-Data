@@ -50,4 +50,4 @@ if __name__ == "__main__":
 		web_page = web + '/podcasts/page/' + str(i) + '?load'
 		print web_page
 		jre_detalle(web_page)
-		time.sleep(5)
+		time.sleep(10)
